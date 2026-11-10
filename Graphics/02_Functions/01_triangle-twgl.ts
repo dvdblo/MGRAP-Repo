@@ -10,13 +10,14 @@ import * as twgl from 'twgl-base.js';
 
 // Vertex Shader as a string
 const vsGLSL = `#version 300 es
-in vec4 a_position;
+//Atributos
+in vec4 a_position; // input (in), 4 valores como vector (vec4). los a_... son atributos
 in vec4 a_color;
 
-out vec4 v_color;
+out vec4 v_color; //output (out) sale un vec4 con un color. los v_.. son los varying values
 
 void main() {
-    gl_Position = a_position;
+    gl_Position = a_position;  //gl_position es una variable que ya existe, hay que llenarla. En este ejemplo no se transforma la posición, pasa directo, pero deberia el shader de transfromarlo.
     v_color = a_color;
 }
 `;
@@ -31,7 +32,7 @@ out vec4 outColor;
 
 void main() {
     outColor = v_color;
-    //outColor = vec4(1, 0, 1, 1);
+    //outColor = vec4(1, 1, 0, 1);
 }
 `;
 
@@ -72,7 +73,7 @@ function generateData(): twgl.Arrays {
             // Two components for the coordinates in X and Y
             numComponents: 2,
             data: new Float32Array([
-                 0.0,   0.7,
+                 0.5,  0.7,
                  0.5,  -0.7,
                 -0.5,  -0.7,
             ]),

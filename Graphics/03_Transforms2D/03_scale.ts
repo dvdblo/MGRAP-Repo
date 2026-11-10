@@ -55,7 +55,7 @@ function drawScene(
     const angleRadians = angleDegrees * Math.PI / 180.0;
     const rotation = [Math.cos(angleRadians), Math.sin(angleRadians)];
     // Scale factors in X and Y
-    const scale = [2.3, 0.6];
+    const scale = [10, 10];
 
     let uniforms =
     {

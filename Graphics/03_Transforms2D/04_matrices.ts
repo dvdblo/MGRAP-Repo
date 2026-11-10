@@ -55,7 +55,7 @@ function drawScene(
     const angleDegrees = 30;
     const angleRadians = angleDegrees * Math.PI / 180.0;
     // Scale factors in X and yield
-    const scale = V2.create(2.3, 0.6);
+    const scale = V2.create(2, 2);
 
     // Create a composite transform matrix
     const translateMatrix = M3.translation(translation);
